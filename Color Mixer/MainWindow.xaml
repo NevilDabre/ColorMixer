@@ -1,0 +1,24 @@
+﻿<Window x:Class="Color_Mixer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Mix Color" Height="350" Width="525" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Background="{Binding BackgroundColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Drag the SliderBar to Set the Background Color" Foreground="Cyan" FontStyle="Italic" FontWeight="Bold"  FontSize="20" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Red" Foreground="Red" FontSize="38" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Green" Foreground="Green" FontSize="38" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Blue" Foreground="Blue" FontSize="38" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+        <Slider Name="sliderRed"  Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Maximum="255" Margin="20" Value="{Binding RedColor,UpdateSourceTrigger=PropertyChanged}"/>
+        <Slider Name="sliderGreen" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Maximum="255" Margin="20" Value="{Binding GreenColor,UpdateSourceTrigger=PropertyChanged}"/>
+        <Slider Name="sliderBlue" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Maximum="255" Margin="20" Value="{Binding BlueColor,UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</Window>
